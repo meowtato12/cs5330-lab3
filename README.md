@@ -27,7 +27,7 @@ This project focuses on training a YOLOv8 model for LEGO piece detection using a
    - The trained model weights will be saved as `best.pt` and `last.pt` in `results/lego_detector/weights`. Training logs and performance metrics are produced as well.  
 
 4. **Dispaly Model Predictions** (`dataset_test/` & `result_visualization.ipynb`):  
-   - A small set of images contained in `dataset_test/` is used to produce sample predictions based on our models.  
+   - A small set of images contained in `dataset_test/` is used to produce sample predictions based on our best trained model. Note that `dataset_test/` is not used in testing process.
    - Use `result_visualization.ipynb` to load the trained model and display predictions.  
 
 ## Key Metrics and Results
