@@ -10,61 +10,25 @@ This project focuses on training a YOLOv8 model for LEGO piece detection using a
 - **Visualization**: Display of annotated images and model predictions on test images.
 
 ## Lab Materials and Descriptions
+1. **Data Preprocessing** (`data_preprocess.ipynb`):  
+   - Split the dataset into training (70%), validation (15%), and testing (15%) sets.  
+   - Convert annotations to YOLO format if necessary.  
+   - Verify the dataset for consistency and correctness.  
 
-### 1. **`results/lego_detector`**
-This folder contains the results of the trained YOLOv8 model, including:
-- **Model Weights**: The best model weights (`best.pt`) and the final model weights (`last.pt`) saved during training.
-- **Training Logs**: Logs and metrics recorded during training, such as loss values, precision, recall, and mAP.
-- **Visualizations**: Plots of training and validation metrics (e.g., loss curves, precision-recall curves).
+2. **Prepare Dataset for Training** (`dataset_yolo.zip`):  
+   - This compressed file contains the dataset required for training, validation, and testing.  
+   - Separated folders of `images/` and `labels/` are created for each subset.  
 
-These files are essential for analyzing the model's performance and reproducing the results.
+3. **Train the Model** (`lab3.ipynb`):  
+   - Set up the environment and install dependencies.  
+   - Extract and validate the dataset of `dataset_yolo.zip`.
+   - Train the YOLOv8 model and monitor performance using loss, precision, recall, and mAP.  
+   - Evaluate the trained model on validation and test sets.  
+   - The trained model weights will be saved as `best.pt` and `last.pt` in `results/lego_detector/weights`. Training logs and performance metrics are produced as well.  
 
----
-
-### 2. **`dataset_test/`**
-This folder contains images for displaying results purpose only. The images for testing purpose are included in dataset_yolo.zip
-
----
-
-### 3. **`dataset_yolo.zip`**
-This is the compressed dataset used for training, validation, and testing. It contains:
-- **Training Set**: Images and labels for training the model.
-- **Validation Set**: Images and labels for validating the model during training.
-- **Test Set**: Images and labels for final evaluation of the model.
-
-The dataset is structured in YOLO format, with separate folders for `images` and `labels` in each split.
-
----
-
-### 4. **`data_preprocess.ipynb`**
-This notebook contains the code for preprocessing the dataset, including:
-- **Dataset Splitting**: Dividing the dataset into training (70%), validation (15%), and testing (15%) sets.
-- **Annotation Conversion**: Converting annotations to YOLO format if necessary.
-- **Dataset Verification**: Checking the dataset for consistency and correctness.
-
-This step ensures that the dataset is ready for training and evaluation.
-
----
-
-### 5. **`lab3.ipynb`**
-This is the main notebook for the lab, containing the following sections:
-- **Setup and Utilities**: Setting up the environment, installing dependencies, and defining paths.
-- **Dataset Extraction and Validation**: Extracting the dataset and verifying its structure.
-- **Sample Images**: Visualizing sample images with annotations to ensure the dataset is correctly labeled.
-- **Dataset Configuration and Model Training**: Configuring the dataset and training the YOLOv8 model.
-- **Model Evaluation**: Evaluating the model on the validation and test sets using metrics such as precision, recall, mAP, and F1-score.
-- **Visualization of Predictions**: Displaying model predictions on test images to qualitatively assess performance.
-
-This notebook provides a step-by-step guide to the entire process, from dataset preparation to model evaluation.
-
----
-
-### 6. **`result_visualization.ipynb`**
-The content in this notebook is the visualization portion separated from lab3.ipynb:
-- **Prediction Visualization**: Displaying model predictions on a small portion of images to overview the results.
-
----
-
+4. **Dispaly Model Predictions** (`dataset_test/` & `result_visualization.ipynb`):  
+   - A small set of images contained in `dataset_test/` is used to produce sample predictions based on our models.  
+   - Use `result_visualization.ipynb` to load the trained model and display predictions.  
 
 ## Key Metrics and Results
 - **mAP (mean Average Precision)**: The model achieved a high mAP on both the validation and test sets, indicating strong detection performance.
